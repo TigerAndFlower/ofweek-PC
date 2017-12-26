@@ -1,0 +1,78 @@
+body, div, p, ul, li, ol, dl, dt, dd, h1, h2, h3, h4, h5, h6{ padding: 0; margin: 0; }
+ul{ list-style-type: none; }
+img{ vertical-align: top; border: 0; }
+canvas{ display: block; }
+body{ font: normal 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", sans-serif; color: #666; background: #2c323e; }
+.clear:after{ display: block; height: 0; content: "x"; clear: both; visibility: hidden; }
+.clear{ *zoom: 1; }
+.fl{ float: left; }
+.fr{ float: right; }
+
+.mt5{ margin-top: 5px; }
+.mt10{ margin-top: 10px; }
+.mt15{ margin-top: 15px; }
+.mt20{ margin-top: 20px; }
+.mt25{ margin-top: 25px; }
+.mt30{ margin-top: 30px; }
+.mt35{ margin-top: 35px; }
+
+.mr10{ margin-right: 10px; }
+.mr20{ margin-right: 20px; }
+
+.ml10{ margin-left: 10px; }
+.ml20{ margin-left: 20px; }
+
+.em1{ padding: 0 .5em; font-style: normal; }
+.em2{ padding: 0 1em; font-style: normal; }
+.w350{ width: 350px; }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+
+.layout-wrap{ position: relative; width: 1200px; margin: 0 auto; }
+.layout-l{ float: left; width: 790px; }
+.layout-r{ float: right; width: 390px; }
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both
+}
+.animated.infinite {
+  animation-iteration-count: infinite
+}
+.animated.hinge {
+  animation-duration: 2s
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-15%,0)
+  }
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+.fadeInDown {
+  animation-name: fadeInDown
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,15%,0)
+  }
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+.fadeInUp {
+  animation-name: fadeInUp
+}

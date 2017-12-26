@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>OFweek_live</title>
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://live.ofweek.com/static/web/common/login/popup-login.js"></script>
+    <script>
+      window.socketKey = {
+        loginType: 1,
+        userId: 21,
+        roomId: 145,
+        nonce: "DmFnVp",
+        mode: 2,
+        ak: "F840A1928F2EE340098208EE606F6DB463E94914"
+      }
+      // 获取url中指定参数的值
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+
+        if (r!=null) {
+          return r[2]
+        } else {
+          return null;
+        }
+      }
+      var accounts = [
+          [1, 35, 122, "lXfTH4", 2, "5D8407C8BF2F79767ACB9CDAE51BAF4A894DD434", "4184ec40aace415593cbbd9ca61570ab"], // 122房间主播
+          [1, 110, 122, "2ASXow", 2, "48A75DBBBF60924B5A403E93C5A958DED4091F5D"], // 观众
+          [2, 4284, 122, "vnT4TJ", 2, "B569F9F1C2C2DE470BFD80026F446ABE69213DA3"], // 游客
+          [1, 32, 136, "shV94I", 2, "B5C0569B6A2C53B6A54ECE6A0AABE9AE8FA7F9CC", "47105519a4194753b7c1084858ea32ed"] // 136房间主播
+      ]
+      var index = getQueryString('account')
+      var roomId = getQueryString('room')
+      var mode = parseInt(getQueryString('mode'), 10)
+      if (index) {
+        window.socketKey = {
+          loginType: accounts[index][0],
+          userId: accounts[index][1],
+          roomId: roomId || accounts[index][2],
+          nonce: accounts[index][3],
+          mode: mode || accounts[index][4],
+          ak: accounts[index][5],
+          sessionId: accounts[index][6]
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
